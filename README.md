@@ -50,6 +50,7 @@ You can find your favourite pokemon here: https://pokeapi.co/api/v2/pokemon
    
 ## Utils
 
-The project contains also DockerFile.
-
+- The project contains also DockerFile.
+- Using **httpie** you can run the GET request as:
+  - `http http://localhost:8080/pokemon/blastoise` 
 
