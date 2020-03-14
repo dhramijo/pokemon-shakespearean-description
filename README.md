@@ -31,9 +31,6 @@ To achieve this we would like to develop a REST API that, given a Pokemon name, 
     enow accuracy to strike exsufflicate cans from a distance of ov'r 160 feet."
 }
 ```
-### Pokemons 
-
-You can find your favourite Pokemon here: https://pokeapi.co/api/v2/pokemon
 
 
 ## How to run the program
@@ -52,7 +49,15 @@ You can find your favourite Pokemon here: https://pokeapi.co/api/v2/pokemon
 
 - **Swagger API Documentation** can be accessible via
   - http://localhost:8080/swagger-ui.html
+
 - The project contains also **DockerFile**.
+
 - With **httpie** you can run the GET request as:
   - `http http://localhost:8080/pokemon/blastoise` 
+
+- Useful APIs:
+  - **Shakespeare translator**: https://funtranslations.com/api/shakespeare
+  - **PokeAPI**: https://pokeapi.co/docs/v2.html/
+  - **Pokemons**: You can find your favourite Pokemon here: https://pokeapi.co/api/v2/pokemon
+
 
