@@ -31,14 +31,14 @@ To achieve this we would like to develop a REST API that, given a Pokemon name, 
     enow accuracy to strike exsufflicate cans from a distance of ov'r 160 feet."
 }
 ```
-### Pokemon 
+### Pokemons 
 
-You can find your favourite pokemon here: https://pokeapi.co/api/v2/pokemon
+You can find your favourite Pokemon here: https://pokeapi.co/api/v2/pokemon
 
 
 ## How to run the program
 
-1. Create a folder where to downloand the project and inside it run the below commands:
+1. Create a folder where to download the project and inside it run the below commands:
 
    - $ git clone https://github.com/dhramijo/pokemon-shakespearean-description.git
 
