@@ -1,4 +1,5 @@
-# Retrieve Shakespearean Description
+# Retrieve Pokemon Shakespearean Description
+
 
 ## Problem Description
 
@@ -33,6 +34,7 @@ To achieve this we would like to develop a REST API that, given a Pokemon name, 
 ### Pokemon 
 
 You can find your favourite pokemon here: https://pokeapi.co/api/v2/pokemon
+
 
 ## How to run the program
 
