@@ -1,0 +1,4 @@
+FROM openjdk:8
+ADD target/pokemon-shakespearean-description.jar pokemon-shakespearean-description.jar
+EXPOSE 8880
+ENTRYPOINT ["java", "-jar", "pokemon-shakespearean-description.jar"]
