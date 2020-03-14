@@ -38,18 +38,20 @@ You can find your favourite pokemon here: https://pokeapi.co/api/v2/pokemon
 
 ## How to run the program
 
-1. Inside project folder run the below commands:
+1. Create a folder where to downloand the project and inside it run the below commands:
 
-   - `mvn package`
+   - $ git clone https://github.com/dhramijo/pokemon-shakespearean-description.git
 
-   - `java -jar target/pokemon-shakespearean-description.jar`
+   - $ mvn spring-boot:run
 
 2. Open Postman
   
-   - Run **GET** request `http://localhost:8080/pokemon/blastoise`
+   - Run **GET** request http://localhost:8080/pokemon/blastoise
    
 ## Utils
 
+- **Swagger API Documentation** can be accessible via
+  - http://localhost:8080/swagger-ui.html
 - The project contains also **DockerFile**.
 - With **httpie** you can run the GET request as:
   - `http http://localhost:8080/pokemon/blastoise` 
