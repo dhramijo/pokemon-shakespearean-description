@@ -47,7 +47,11 @@ public class PokemonServiceImpl implements PokemonService {
 
         try{
             log.info("Request is sending to PokemonAPI endpoint resource");
-            ResponseEntity<String> response = restTemplate.exchange(pokemonAPIUrl + pokemonName, HttpMethod.GET, new HttpEntity<>(null, headers), String.class);
+            ResponseEntity<String> response =
+                    restTemplate.exchange(pokemonAPIUrl + pokemonName,
+                            HttpMethod.GET,
+                            new HttpEntity<>(null, headers),
+                            String.class);
 
             // Parse JSON response from PokemonAPI to get Pokemon's description
             String pokemonDescription = pokemonAPIJsonParsing(response);

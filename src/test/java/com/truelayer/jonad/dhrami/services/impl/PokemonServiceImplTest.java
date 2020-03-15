@@ -3,10 +3,13 @@ package com.truelayer.jonad.dhrami.services.impl;
 import com.truelayer.jonad.dhrami.modules.Pokemon;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,34 +22,37 @@ import static org.mockito.ArgumentMatchers.*;
  * Created by jonad dhrami on 14/03/2020.
  */
 
+@ExtendWith(MockitoExtension.class)
 @SpringBootTest
 class PokemonServiceImplTest {
 
-    @MockBean
+    @Mock
     private RestTemplate restTemplate;
 
     @InjectMocks
-    PokemonServiceImpl pokemonService = new PokemonServiceImpl();
+    PokemonServiceImpl pokemonService;
 
     @Test
-    void getPokemonShakespeareanDescriptionByName() {
+    void test_ShouldReturnPokemonShakespeareanDescriptionByName() {
 
         Pokemon pokemon = new Pokemon("charizard",
-                "Charizard flies around the sky in search of powerful opponents");
+                "charizard flies 'round the sky in search of powerful opponents. " +
+                        "'t breathes fire of such most wondrous heat yond 't melts aught. However, " +
+                        "'t nev'r turns its fiery breath on any opponent weaker than itself.");
 
-        Mockito.when(restTemplate.exchange(anyString(), any(), any(HttpEntity.class), eq(Pokemon.class)))
+        when(restTemplate.exchange(anyString(), any(), any(HttpEntity.class), eq(String.class)))
                 .thenReturn(new ResponseEntity(String.class, HttpStatus.OK));
 
         Pokemon response = pokemonService.getPokemonShakespeareanDescriptionByName("charizard");
 
-        Assert.assertEquals(pokemon.getName(),response.getName());
+        Assert.assertEquals(pokemon.getDescription(),response.getDescription());
 
     }
 
     @Test
-    public void getCategorisedTransactionsThrowExceptionInvalidInput() throws Exception {
+    public void test_shouldNotReturnPokemonShakespeareanDescriptionForInvalidPokemonName() throws Exception {
 
-        Mockito.when(restTemplate.exchange(anyString(), any(), any(HttpEntity.class),eq(Pokemon.class)))
+        when(restTemplate.exchange(anyString(), any(), any(HttpEntity.class),eq(Pokemon.class)))
                 .thenThrow(new HttpClientErrorException(HttpStatus.BAD_REQUEST));
 
         Pokemon response = pokemonService.getPokemonShakespeareanDescriptionByName("dreamer");
